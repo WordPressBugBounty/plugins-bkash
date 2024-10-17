@@ -346,9 +346,14 @@ function softtech_nagad_admin_order_data( $order ) {
     if ( $order->get_payment_method() != 'softtech_nagad' )
         return;
 
+    // get order id
+    $order_id = $order->get_id();
 
-    $number      = ( get_post_meta( $_GET['post'], '_nagad_number', true ) ) ? get_post_meta( $_GET['post'], '_nagad_number', true ) : '';
-    $transaction = ( get_post_meta( $_GET['post'], '_nagad_transaction', true ) ) ? get_post_meta( $_GET['post'], '_nagad_transaction', true ) : '';
+    // $number      = ( get_post_meta( $_GET['post'], '_nagad_number', true ) ) ? get_post_meta( $_GET['post'], '_nagad_number', true ) : '';
+    $number = get_post_meta( $order_id, '_bkash_number', true ) ?? '';
+
+    // $transaction = ( get_post_meta( $_GET['post'], '_nagad_transaction', true ) ) ? get_post_meta( $_GET['post'], '_nagad_transaction', true ) : '';
+    $transaction = get_post_meta( $order_id, '_bkash_transaction', true ) ?? '';
 
     ?>
     <div class="form-field form-field-wide">

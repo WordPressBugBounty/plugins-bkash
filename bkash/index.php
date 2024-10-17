@@ -3,7 +3,7 @@
 Plugin Name: SoftTech-IT bKash, Rocket, Nagad
 Plugin URI:  http://softtech-it.com
 Description: This plugin helps users to integrate bkash , rocket and nagad payment gateway along with SMS API with woocommerce. bKash, rocket and nagad all of them are money transfer systems of Bangladesh by facilitating money transfer through mobile phones. This plugin is an addon for woocommerce, so woocommerce is mandatory
-Version:     2.3
+Version:     2.4
 Author:      Md Toriqul Mowla Sujan
 Author URI:  http://facebook.com/sujan4g
 License:     GPL2

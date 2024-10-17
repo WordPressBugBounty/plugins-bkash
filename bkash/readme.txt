@@ -2,8 +2,8 @@
 Contributors: sujon3g, developerzinan
 Tags: woocommerce, bkash wordpress plugin, rocket wordpress plugin, nagad wordpress plugin, mtm sujan
 Requires at least: 4.5.0
-Tested up to: 6.5.4
-Stable tag: 2.3
+Tested up to: 6.6.2
+Stable tag: 2.4
 Stable tag: trunk
 License: GPLv2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
@@ -66,6 +66,9 @@ Yes definitely, Maintained high level validation in both frontend and backend.
 1. Overview Screenshot
 
 == Changelog ==
+
+= 2.4 =
+* Fix - Fixed the issue where the Transaction ID and bKash number were not showing on the order page
 
 = 2.3 =
 * Added - qr scanner integrated

@@ -57,7 +57,7 @@ if ( in_array( 'woocommerce/woocommerce.php', apply_filters( 'active_plugins', g
                 if ( isset( $_FILES['woocommerce_softtech_bkash_upload_file'] ) && !empty( $_FILES['woocommerce_softtech_bkash_upload_file']['name'] ) ) {
 
                     if ( !function_exists( 'wp_handle_upload' ) ) {
-                        require_once ( ABSPATH . 'wp-admin/includes/file.php' );
+                        require_once( ABSPATH . 'wp-admin/includes/file.php' );
                     }
 
                     $uploaded_file = $_FILES['woocommerce_softtech_bkash_upload_file'];
@@ -347,9 +347,14 @@ if ( in_array( 'woocommerce/woocommerce.php', apply_filters( 'active_plugins', g
         if ( $order->get_payment_method() != 'softtech_bkash' )
             return;
 
+        // get order id
+        $order_id = $order->get_id();
 
-        $number      = ( get_post_meta( $_GET['post'], '_bkash_number', true ) ) ? get_post_meta( $_GET['post'], '_bkash_number', true ) : '';
-        $transaction = ( get_post_meta( $_GET['post'], '_bkash_transaction', true ) ) ? get_post_meta( $_GET['post'], '_bkash_transaction', true ) : '';
+        // $number = ( get_post_meta( $_GET['post'], '_bkash_number', true ) ) ? get_post_meta( $_GET['post'], '_bkash_number', true ) : '';
+        $number = get_post_meta( $order_id, '_bkash_number', true ) ?? '';
+
+        // $transaction = ( get_post_meta( $_GET['post'], '_bkash_transaction', true ) ) ? get_post_meta( $_GET['post'], '_bkash_transaction', true ) : '';
+        $transaction = get_post_meta( $order_id, '_bkash_transaction', true ) ?? '';
 
         ?>
         <div class="form-field form-field-wide">
